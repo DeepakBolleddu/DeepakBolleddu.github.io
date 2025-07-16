@@ -1,0 +1,323 @@
+/* ==========================================================================
+   animations.css - Advanced animation effects for Deepak Bolleddu's website
+   ========================================================================== */
+
+/* Page transition animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animations to page elements */
+  .page-content {
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  .hero-text {
+    animation: slideInLeft 0.8s ease 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .profile-card {
+    animation: slideInRight 0.8s ease 0.4s forwards;
+    opacity: 0;
+  }
+  
+  /* Staggered animations for card elements */
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card:nth-child(5) { animation-delay: 0.5s; }
+  .card:nth-child(6) { animation-delay: 0.6s; }
+  
+  /* Text animations */
+  .animated-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .animated-text.appear span {
+    animation: textReveal 0.5s ease forwards;
+  }
+  
+  @keyframes textReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Letter-by-letter animation */
+  .letter-animation span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .letter-animation.appear span {
+    animation: letterFadeIn 0.3s ease forwards;
+  }
+  
+  @keyframes letterFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Background pattern animation */
+  .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  .animated-background span {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent-color);
+    animation: floatAnimation 20s linear infinite;
+  }
+  
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+    25% {
+      opacity: 0.4;
+    }
+    50% {
+      transform: translateY(-150px) rotate(180deg);
+      opacity: 0.8;
+      border-radius: 30%;
+    }
+    75% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+  }
+  
+  /* Hover effect for project cards */
+  .card-zoom {
+    overflow: hidden;
+  }
+  
+  .card-zoom img {
+    transition: transform 0.5s ease;
+  }
+  
+  .card-zoom:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* 3D tilt effect for cards */
+  .tilt-card {
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
+  }
+  
+  /* Typewriter effect */
+  .typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid var(--accent-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
+  }
+  
+  /* Focus spotlight effect */
+  .spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.2) 0%,
+      rgba(255,255,255,0) 70%
+    );
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+  }
+  
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+  
+  /* Scroll progress indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent-color);
+    z-index: 1001;
+    transition: width 0.1s ease;
+  }
+  
+  /* Section reveal animation */
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .reveal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Animated skill bars for CV page */
+  .skill-bar {
+    height: 8px;
+    background-color: var(--bg-color);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-progress {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+  }
+  
+  .skill-bar.animate .skill-progress {
+    /* Widths will be set dynamically with inline styles or classes */
+    animation: progressAnimation 1.5s ease-out forwards;
+  }
+  
+  @keyframes progressAnimation {
+    from { width: 0; }
+    to { width: var(--progress-width); }
+  }
+  
+  /* Text highlight effect */
+  .text-highlight {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .text-highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(52, 152, 219, 0.2);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .text-highlight:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* Page transition overlay */
+  .page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: 9999;
+    transform: translateY(100%);
+  }
+  
+  .page-transition.active {
+    animation: pageTransition 0.6s ease-in-out forwards;
+  }
+  
+  @keyframes pageTransition {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  .page-transition.exit {
+    transform: translateY(0);
+    animation: pageTransitionExit 0.6s ease-in-out forwards;
+  }
+  
+  @keyframes pageTransitionExit {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+  }
+  

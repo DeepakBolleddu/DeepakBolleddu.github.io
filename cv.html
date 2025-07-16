@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Deepak Bolleddu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        header { background: #2c3e50; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo a { color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: background 0.3s; }
+        .nav-links a:hover, .nav-links a.active { background: #34495e; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .cv-container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        .cv-actions { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+        .download-btn { background: #3498db; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s; }
+        .download-btn:hover { background: #2980b9; }
+        .pdf-container { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .pdf-viewer { width: 100%; height: 80vh; border: none; }
+        .pdf-fallback { text-align: center; padding: 4rem 2rem; }
+        .pdf-fallback h2 { color: #2c3e50; margin-bottom: 1rem; }
+        .pdf-fallback p { color: #666; margin-bottom: 2rem; }
+        .fallback-btn { background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .fallback-btn:hover { background: #c0392b; }
+        footer { background: #2c3e50; color: white; padding: 2rem 0; text-align: center; }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .cv-container { padding: 2rem 1rem; }
+            .cv-actions { flex-direction: column; align-items: center; }
+            .pdf-viewer { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Deepak Bolleddu</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Curriculum Vitae</h1>
+        <p>Download or view my complete professional resume highlighting my experience, education, and skills in software engineering and data science.</p>
+    </section>
+
+    <section class="cv-container">
+        <div class="cv-actions">
+            <a href="docs/Deepak_Bolleddu_CV.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+            </a>
+        </div>
+
+        <div class="pdf-container">
+            <object data="docs/Deepak_Bolleddu_CV.pdf" type="application/pdf" class="pdf-viewer">
+                <div class="pdf-fallback">
+                    <h2>PDF Viewer Not Supported</h2>
+                    <p>It appears your browser doesn't support embedded PDFs. Please download the CV to view it.</p>
+                    <a href="docs/Deepak_Bolleddu_CV.pdf" class="fallback-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download CV
+                    </a>
+                </div>
+            </object>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Deepak Bolleddu. All rights reserved.</p>
+    </footer>
+
+    <script src="js/cv.js"></script>
+</body>
+</html>

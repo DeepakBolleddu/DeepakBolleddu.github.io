@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Deepak Bolleddu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        header { background: #2c3e50; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo a { color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: background 0.3s; }
+        .nav-links a:hover, .nav-links a.active { background: #34495e; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; padding: 3rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .project-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer; }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-thumbnail { width: 100%; height: 200px; object-fit: cover; }
+        .project-title { padding: 1rem 1.5rem 0.5rem; font-size: 1.3rem; color: #2c3e50; margin: 0; }
+        .project-categories { padding: 0 1.5rem; margin-bottom: 1rem; }
+        .category-tag { display: inline-block; background: #f8f9fa; color: #495057; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem; }
+        .tag-accepted { background: #28a745 !important; color: white !important; }
+        .project-description { padding: 0 1.5rem; color: #666; line-height: 1.6; }
+        .project-date { display: block; padding: 1rem 1.5rem; color: #888; font-size: 0.9rem; border-top: 1px solid #e9ecef; margin-top: 1rem; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; }
+        .modal-content { background: white; margin: 5% auto; padding: 2rem; width: 90%; max-width: 800px; border-radius: 12px; position: relative; max-height: 80vh; overflow-y: auto; }
+        .close-button { position: absolute; top: 15px; right: 20px; font-size: 2rem; cursor: pointer; color: #666; }
+        .modal-title { color: #2c3e50; margin-bottom: 1rem; padding-right: 40px; }
+        .modal-description { margin-bottom: 2rem; line-height: 1.8; }
+        .technology-tag { background: #3498db; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-right: 0.5rem; }
+        .modal-link { background: #3498db; color: white; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; margin-right: 1rem; }
+        footer { background: #2c3e50; color: white; padding: 2rem 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Deepak Bolleddu</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Publications</h1>
+        <p>A curated list of my research papers and academic contributions in computer vision, machine learning, and medical imaging.</p>
+    </section>
+
+    <section id="publications-grid" class="projects-container">
+        <!-- Publications will be loaded here -->
+    </section>
+
+    <div id="publication-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="publication-modal-content-container"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Deepak Bolleddu. All rights reserved.</p>
+    </footer>
+
+    <script src="js/publications.js"></script>
+</body>
+</html>
