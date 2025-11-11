@@ -3,172 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Bolleddu - Software Engineer & Data Scientist</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Deepak Bolleddu - Personal Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (for headings) and PT Serif (for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind configuration to add the fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        serif: ['PT Serif', 'ui-serif', 'Georgia'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Apply the body font default */
+        body {
+            font-family: 'PT Serif', serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Utility class to apply sans-serif font */
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <!-- Navigation Header -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">Deepak Bolleddu</a>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                </ul>
-            </nav>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/deepakbolleddu/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/DeepakBolleddu" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://medium.com/@deepakbolleddu" target="_blank"><i class="fab fa-medium"></i></a>
-            </div>
-            <button class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Header / Navigation -->
+    <nav class="max-w-4xl mx-auto flex justify-start items-center py-6 px-4 border-b border-gray-200">
+        <div>
+            <h1 class="font-sans font-bold text-xl text-gray-900">Deepak Bolleddu</h1>
         </div>
-    </header>
+        <!-- Research link removed from here -->
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="animated-text">Deepak Bolleddu</h1>
-                <p class="hero-role">Software Engineer & Data Scientist</p>
-                <p class="hero-subtitle">Passionate about creating innovative solutions through technology. Specializing in machine learning, data analysis, and web development.</p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn-primary">View My Work</a>
-                    <a href="mailto:deepakbolleddu08@gmail.com" class="btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-background"></div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="content-section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I am a software engineer and data scientist with a passion for solving complex problems using technology. My journey in tech began with a fascination for how data can drive decision-making and innovation. Over the years, I've developed expertise in machine learning algorithms, data analysis, and web development.</p>
-                        <p>My academic background includes a Master's degree in Computer Science with a specialization in Artificial Intelligence. I've worked on projects ranging from predictive analytics systems to interactive data visualization platforms that help businesses gain actionable insights from their data.</p>
-                        <p>I believe in the power of technology to transform industries and improve lives. My goal is to contribute to this transformation by creating solutions that are not only technically sound but also user-friendly and accessible.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Data Science & ML</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">Computer Vision</span>
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">PyTorch</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Web Development</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Work Section -->
-        <section id="featured-work" class="featured-work-section">
-            <div class="container">
-                <h2 class="section-title">Featured Work</h2>
-                <p class="section-subtitle">Here's a selection of my recent projects and publications. Explore these highlights or visit the dedicated sections for a comprehensive view of my work.</p>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto py-10 px-4">
+        
+        <!-- Grid layout for Image + Text -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            
+            <!-- Left Column: Profile Image -->
+            <div class="md:col-span-1 flex flex-col items-center">
+                <!-- 
+                  Placeholder Image:
+                  You can replace this 'src' URL with the URL of your 'deepak.jpg' image 
+                  once you upload it to a web-accessible location.
+                -->
+                <img src="https://placehold.co/400x400/EFEFEF/333333?text=Deepak" 
+                     alt="Profile picture of Deepak"
+                     class="rounded-lg w-full max-w-[250px] md:max-w-full"
+                     onerror="this.src='https://placehold.co/400x400/EFEFEF/333333?text=Image+Error'">
                 
-                <div class="featured-grid">
-                    <div class="featured-card stagger-item">
-                        <div class="featured-image">
-                            <img src="./images/projects/chestXray_abnormality_Detection/prediction-results.jpeg" alt="Script Surgeons Project">
-                        </div>
-                        <div class="featured-content">
-                            <h3>Script Surgeons</h3>
-                            <p>AI-powered platform for detecting 14 musculoskeletal abnormalities in chest X-rays using advanced machine learning techniques.</p>
-                            <a href="projects.html" class="featured-link">View Projects <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                <!-- Research link styled as a button (REMOVED) -->
 
-                    <div class="featured-card stagger-item">
-                        <div class="featured-image">
-                            <img src="./images/publications/cvip-thumbnail.png" alt="CVIP 2025 Publication">
-                        </div>
-                        <div class="featured-content">
-                            <h3>CVIP 2025 Publication</h3>
-                            <p>Accepted research paper on "Optimized Uncertainty Quantification for Improved Chest X-ray Abnormality Detection".</p>
-                            <a href="publications.html" class="featured-link">View Publications <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                <!-- Social Media Icons -->
+                <div class="flex space-x-6 mt-6">
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="#" aria-label="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <!-- Twitter (X) (REMOVED) -->
+                    <!-- Email -->
+                    <a href="#" aria-label="Email">
+                        <svg class="w-6 h-6" fill="#D44638" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 9-9.518-9h19.036zm-1.518 14h-16v-11.8l8 7.8 8-7.8v11.8z"/>
+                        </svg>
+                    </a>
                 </div>
+
+                <!-- Research Blogs Button -->
+                <a href="#" class="font-sans text-gray-800 hover:text-black bg-gray-100 hover:bg-gray-200 transition-colors mt-6 px-6 py-2 rounded-lg text-lg font-medium">
+                    Research Blogs
+                </a>
             </div>
-        </section>
+            
+            <!-- Right Column: About Text -->
+            <div class="md:col-span-2 space-y-5 text-base md:text-lg">
+                <p>
+                    I'm Deepak, a machine learning engineer and interdisciplinary researcher. My
+                    current research focuses on LLM collaboration, evaluation, and agentic
+                    reasoning. I also conduct empirical, mixed-methods research in 
+                    <strong class="font-bold text-gray-900">human-AI interaction</strong> and enjoy publishing at both AI and HCI
+                    venues that bridge the two communities.
+                </p>
+                <p>
+                    As a strong advocate for open-source AI development, I recently
+                    completed the 
+                    <a href="#" class="text-blue-600 hover:underline">Google Summer of Code (GSoC) 2024</a> 
+                    program with the <a href="#" class="text-blue-600 hover:underline">UC-SCPO org</a>, 
+                    focusing on building trustworthy LLMs and AI agents.
+                </p>
+                <p>
+                    In early Sep 2021, I joined Infosys's Propel Rotational Program as a
+                    <strong class="font-bold text-gray-900">Machine Learning Engineer II</strong> at their Palo Alto, CA headquarters in
+                    Stanford Research Park to work on enterprise NLP, LLM problems on
+                    private data. My team worked on inventing cutting edge transformer
+                    based models that generate representation of <strong class="font-bold text-gray-900">textual</strong> HTTP
+                    headers in absence of natural language syntax and semantics, a first of
+                    its kind.
+                </p>
+                <p>
+                    Previously, I was a CS graduate student in the 
+                    <a href="#" class="text-blue-600 hover:underline">honors program</a> 
+                    at the <a href="#" class="text-blue-600 hover:underline">University of Wollongong</a> 
+                    in sunny Los Angeles. I wanted machines to not just <em class="italic">learn</em>, 
+                    but also <em class="italic">understand</em> complex ideas the
+                    way we do, especially with <strong class="font-bold text-gray-900">natural languages</strong>. 
+                    My <a href="#" class="text-blue-600 hover:underline"><em class="italic">master's thesis</em></a> 
+                    proposed new methods in lexical complexit-driven
+                    representation learning, which achieved state-of-the-art (2021) on
+                    two NLP-ML shared tasks (NAACL 2018): 1. Complex phrase detection,
+                    2. Complex word detection, and probed 3. Grammatical sentence
+                    correctness detection, encapsulated for the eventual goal of lexical
+                    simplification of English text. I was also a TA (course producer) for
+                    USC's popular course 
+                    <a href="#" class="text-blue-600 hover:underline">CSQ 576: Analysis of Algorithm</a> 
+                    led by <a href="#" class="text-blue-600 hover:underline">Victor Adamchik</a>.
+                </p>
+                <p>
+                    Before joining Uni of Wollongong, I spent about two wonderful years (2017-19) as a
+                    Machine Learning Research Engineer in the 
+                    <a href="#" class="text-blue-600 hover:underline">Department of Computer Science</a> 
+                    at <a href="#" class="text-blue-600 hover:underline">IIT Bombay</a>. 
+                    I was advised by <a href="#" class="text-blue-600 hover:underline">Prof. Pushpak Bhattacharyya</a> 
+                    at the <a href="#" class="text-blue-600 hover:underline">Computation for Language Technology</a> lab. 
+                    My research broadly focused on Machine Learning and Natural
+                    Language Understanding/Inference and token classification tasks.
+                </p>
+                <p>
+                    During the summer of 2017, I worked on Probabilistic Models for
+                    Intelligent Text Input processing as a Machine learning research
+                    intern in the Human-Computer Interaction (HCI) group at the IDC
+                    School of Design (IDC Dept), JNTU, where I was advised by
+                    <a href="#" class="text-blue-600 hover:underline">Prof.</a>.
+                </p>
+            </div>
+        </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-contact">
-                <h3>Get In Touch</h3>
-                <p>I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to contact me.</p>
-                <a href="mailto:deepakbolleddu08@gmail.com" class="contact-button">Say Hello</a>
-            </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="cv.html">CV</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/deepakbolleddu/" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com/DeepakBolleddu" target="_blank">GitHub</a></li>
-                        <li><a href="https://medium.com/@deepakbolleddu" target="_blank">Medium</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Deepak Bolleddu. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html>
