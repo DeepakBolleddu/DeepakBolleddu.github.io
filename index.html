@@ -20,6 +20,15 @@
                     fontFamily: {
                         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
                         serif: ['PT Serif', 'ui-serif', 'Georgia'],
+                    },
+                    colors: {
+                        // Custom colors derived from the Research Interests image for the cards
+                        'card-rl-border': '#86EFAC', // Light Teal/Green for RL
+                        'card-rl-bg': '#F0FFF4',
+                        'card-cv-border': '#FDBA74', // Light Orange for CV
+                        'card-cv-bg': '#FFF7ED',
+                        'card-llm-border': '#93C5FD', // Light Blue for LLMs
+                        'card-llm-bg': '#EFF6FF',
                     }
                 }
             }
@@ -45,27 +54,24 @@
         <div>
             <h1 class="font-sans font-bold text-xl text-gray-900">Deepak Bolleddu</h1>
         </div>
-        <!-- Research link removed from here -->
     </nav>
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto py-10 px-4">
         
-        <!-- Grid layout for Image + Text -->
+        <!-- ================================== 1. ABOUT SECTION (Image/Interests/Socials + Text) ================================== -->
+        
+        <!-- Grid layout for Image/Sidebar + Text -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             
-            <!-- Left Column: Profile Image -->
-            <div class="md:col-span-1 flex flex-col items-center">
+            <!-- Left Column: Profile Image, Socials, Research Button, and Research Interests -->
+            <div class="md:col-span-1 flex flex-col items-center md:items-start">
                 
-                <!-- 
-                  Image Source Updated: 
-                  Now using the direct URL you provided to your GitHub-hosted image.
-                -->
                 <img src="https://raw.githubusercontent.com/DeepakBolleddu/DeepakBolleddu.github.io/main/images/profile/deepak.jpg" 
                      alt="Profile picture of Deepak"
                      class="rounded-lg w-full max-w-[250px] md:max-w-full">
                 
-                <!-- Social Media Icons -->
+                <!-- 1. Social Media Icons (Order 1) -->
                 <div class="flex space-x-6 mt-6">
                     <!-- LinkedIn -->
                     <a href="#" aria-label="LinkedIn">
@@ -86,11 +92,38 @@
                         </svg>
                     </a>
                 </div>
-
-                <!-- Research Blogs Button -->
-                <a href="#" class="font-sans text-gray-800 hover:text-black bg-gray-100 hover:bg-gray-200 transition-colors mt-6 px-6 py-2 rounded-lg text-lg font-medium">
+                
+                <!-- 2. Research Blogs Button (Order 2) -->
+                <a href="#" class="font-sans text-gray-800 hover:text-black bg-gray-100 hover:bg-gray-200 transition-colors mt-6 px-6 py-2 rounded-lg text-lg font-medium text-center w-full max-w-[250px] md:max-w-full">
                     Research Blogs
                 </a>
+
+                <!-- 3. Research Interests (Small and Grouped) (Order 3) -->
+                <div class="mt-6 w-full max-w-[250px] md:max-w-full">
+                    <h2 class="font-sans font-bold text-base text-gray-900 mb-3 md:text-left text-center">Research Interests</h2>
+                    
+                    <div class="space-y-3 text-sm">
+                        
+                        <!-- Card 1: Reinforcement Learning -->
+                        <div class="rounded-lg p-3 border border-card-rl-border bg-card-rl-bg">
+                            <h3 class="font-sans text-sm font-semibold text-green-700">Reinforcement Learning</h3>
+                            <p class="mt-1 text-xs text-gray-600">Multi-agent Systems, AI Agents, & Agentic Solutions.</p>
+                        </div>
+
+                        <!-- Card 2: Computer Vision & Multimodal AI -->
+                        <div class="rounded-lg p-3 border border-card-cv-border bg-card-cv-bg">
+                            <h3 class="font-sans text-sm font-semibold text-orange-600">Computer Vision & Multimodal AI</h3>
+                            <p class="mt-1 text-xs text-gray-600">Multimedia Systems & Vision-Language Models.</p>
+                        </div>
+
+                        <!-- Card 3: Large Language Models (LLMs) -->
+                        <div class="rounded-lg p-3 border border-card-llm-border bg-card-llm-bg">
+                            <h3 class="font-sans text-sm font-semibold text-blue-700">Large Language Models (LLMs)</h3>
+                            <p class="mt-1 text-xs text-gray-600">Alignment, Pre-training, & AI Safety.</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             
             <!-- Right Column: About Text -->
@@ -155,7 +188,7 @@
                 </p>
             </div>
         </div>
-
+        
     </main>
 
 </body>
