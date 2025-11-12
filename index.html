@@ -7,10 +7,10 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter (for headings) and PT Serif (for body) -->
+    <!-- Google Fonts: Inter (for headings), PT Serif (for body), and Lexend (for skills) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Custom Tailwind configuration to add the fonts -->
     <script>
@@ -20,6 +20,8 @@
                     fontFamily: {
                         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
                         serif: ['PT Serif', 'ui-serif', 'Georgia'],
+                        // NEW: Lexend font family
+                        lexend: ['Lexend', 'ui-sans-serif', 'system-ui'],
                     },
                     colors: {
                         // Custom colors derived from the Research Interests image for the cards
@@ -50,7 +52,8 @@
 <body class="bg-white text-gray-800 leading-relaxed">
 
     <!-- Header / Navigation -->
-    <nav class="max-w-4xl mx-auto flex justify-start items-center py-6 px-4 border-b border-gray-200">
+    <!-- Added sticky top-0 bg-white z-10 to make the nav bar fixed on scroll -->
+    <nav class="sticky top-0 bg-white z-10 max-w-4xl mx-auto flex justify-start items-center py-6 px-4 border-b border-gray-200">
         <div>
             <h1 class="font-sans font-bold text-xl text-gray-900">Deepak Bolleddu</h1>
         </div>
@@ -69,24 +72,25 @@
                 
                 <img src="https://raw.githubusercontent.com/DeepakBolleddu/DeepakBolleddu.github.io/main/images/profile/deepak.jpg" 
                      alt="Profile picture of Deepak"
-                     class="rounded-lg w-full max-w-[250px] md:max-w-full">
+                     class="rounded-lg w-full max-w-[250px] md:max-w-full"
+                     onerror="this.src='https://placehold.co/400x400/e2e8f0/94a3b8?text=Deepak+Bolleddu'; this.onerror=null;">
                 
                 <!-- 1. Social Media Icons (Order 1) -->
                 <div class="flex space-x-6 mt-6">
                     <!-- LinkedIn -->
-                    <a href="#" aria-label="LinkedIn">
+                    <a href="#" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-900 transition-colors">
                         <svg class="w-6 h-6" fill="#0077B5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
                     </a>
                     <!-- GitHub -->
-                    <a href="#" aria-label="GitHub">
+                    <a href="#" aria-label="GitHub" class="text-gray-500 hover:text-gray-900 transition-colors">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </a>
                     <!-- Email -->
-                    <a href="#" aria-label="Email">
+                    <a href="#" aria-label="Email" class="text-gray-500 hover:text-gray-900 transition-colors">
                         <svg class="w-6 h-6" fill="#D44638" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 9-9.518-9h19.036zm-1.518 14h-16v-11.8l8 7.8 8-7.8v11.8z"/>
                         </svg>
@@ -94,7 +98,8 @@
                 </div>
                 
                 <!-- 2. Research Blogs Button (Order 2) -->
-                <a href="#" class="font-sans text-gray-800 hover:text-black bg-gray-100 hover:bg-gray-200 transition-colors mt-6 px-6 py-2 rounded-lg text-lg font-medium text-center w-full max-w-[250px] md:max-w-full">
+                <!-- MODIFIED: Replaced shadow classes with ring classes for a cleaner outer border effect on hover and focus -->
+                <a href="#" class="font-sans text-gray-800 hover:text-black bg-gray-100 hover:bg-gray-200 transition-all duration-300 mt-6 px-6 py-2 rounded-lg text-lg font-medium text-center w-full max-w-[250px] md:max-w-full outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hover:ring-2 hover:ring-offset-2 hover:ring-blue-500">
                     Research Blogs
                 </a>
 
@@ -124,6 +129,19 @@
                     </div>
                 </div>
                 
+                <!-- 4. Knowledge Areas (Order 4) [NEW SECTION] -->
+                <div class="mt-6 w-full max-w-[250px] md:max-w-full">
+                    <h2 class="font-sans font-bold text-base text-gray-900 mb-3 md:text-left text-center">Knowledge Areas</h2>
+                    <!-- Styled box for the knowledge areas -->
+                    <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 text-xs text-gray-700 space-y-2">
+                        <p class="font-sans font-medium text-gray-800">&bull; Human-AI Interaction (HCI)</p>
+                        <p class="font-sans font-medium text-gray-800">&bull; Natural Language Processing (NLP)</p>
+                        <p class="font-sans font-medium text-gray-800">&bull; AI Safety & Alignment</p>
+                        <p class="font-sans font-medium text-gray-800">&bull; Open-Source Development</p>
+                        <p class="font-sans font-medium text-gray-800">&bull; Interdisciplinary Research</p>
+                    </div>
+                </div>
+
             </div>
             
             <!-- Right Column: About Text -->
@@ -188,8 +206,250 @@
                 </p>
             </div>
         </div>
+
+        <!-- ================================== 2. TECHNICAL SKILLS SECTION ================================== -->
+        <!-- Reduced top margin (mt-12) and padding (pt-8) -->
+        <section class="mt-12 pt-8 border-t border-gray-200">
+            <h2 class="font-sans font-bold text-2xl text-gray-900 mb-8 text-center">Technical Skills</h2>
+            <!-- Changed background to blue theme (bg-card-llm-bg) and border (border-card-llm-border) -->
+            <div class="rounded-lg border border-card-llm-border bg-card-llm-bg p-6 md:p-8">
+                <!-- Changed text colors to match the blue theme -->
+                <!-- APPLIED: font-lexend and font-semibold to the entire paragraph for skills text -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 text-sm text-blue-900">
+                    
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Programming Languages</strong>
+                        Python (PyTorch, TensorFlow, JAX), C++ (CUDA), Rust, Julia, TypeScript
+                    </p>
+                    
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Deep Learning Frameworks</strong>
+                        PyTorch 2.x, TensorFlow/JAX, Hugging Face Transformers, DeepSpeed, Megatron-LM, vLLM, Ray
+                    </p>
+            
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">LLM & Foundation Models</strong>
+                        GPT-4/o1, Claude 4 Sonnet, Llama 3.x, Gemini, Mistral, Fine-tuning (LoRA, QLoRA), RLHF, DPO, PPO
+                    </p>
+            
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Multimodal AI</strong>
+                        Vision Transformers (ViT), CLIP, Stable Diffusion, DALL-E, Whisper, GPT-4V, VLMs
+                    </p>
+            
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Cloud & Technologies</strong>
+                        Azure, AWS, Docker, Apache Spark, Hadoop, Snowflake
+                    </p>
+            
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Mathematical Foundations</strong>
+                        Linear algebra, Optimization theory, Probability & statistics, Information theory, Numerical methods
+                    </p>
+            
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Specialized Techniques</strong>
+                        Retrieval-Augmented Generation (RAG), Constitutional AI, Chain-of-Thought prompting, Mixture of Experts (MoE), Quantization (GPTQ, AWQ)
+                    </p>
+            
+                    <p class="font-lexend font-semibold">
+                        <!-- UPDATED: Changed text color to gray-900 (black) and font weight to bold -->
+                        <strong class="font-sans font-bold text-gray-900 block mb-1">Research Tools</strong>
+                        LaTeX, Jupyter, ArXiv, Papers with Code, Literature review automation, Technical writing & documentation
+                    </p>
+            
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================== 3. PROJECTS SECTION (was 2) ================================== -->
+        <!-- Reduced top margin (mt-12) and padding (pt-8) -->
+        <section class="mt-12 pt-8 border-t border-gray-200">
+            <h2 class="font-sans font-bold text-2xl text-gray-900 mb-8">Projects & Research</h2>
+
+            <div class="space-y-12">
+
+                <!-- Project 1 -->
+                <article class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+                    <!-- Image -->
+                    <div class="md:col-span-1">
+                        <img src="https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image" 
+                             alt="Project placeholder image" 
+                             class="rounded-lg w-full h-auto object-cover aspect-video"
+                             onerror="this.src='https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image'; this.onerror=null;">
+                    </div>
+                    <!-- Content -->
+                    <div class="md:col-span-3">
+                        <h3 class="font-sans font-semibold text-xl text-gray-900">Advanced Facial Recognition & Emotion Detection</h3>
+                        <p class="mt-2 text-base">Summary: Real-time adaptive AR/VR demos, model architecture notes, dataset pointers, and links to code.</p>
+                        <!-- Links -->
+                        <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- Abstract/Doc Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                Abstract
+                            </a>
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- Code/Git Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                        <!-- Tags -->
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="font-sans text-xs font-medium bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">AI</span>
+                            <span class="font-sans text-xs font-medium bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                            <span class="font-sans text-xs font-medium bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-full">Computer Vision</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+                    <!-- Image -->
+                    <div class="md:col-span-1">
+                        <img src="https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image" 
+                             alt="Project placeholder image" 
+                             class="rounded-lg w-full h-auto object-cover aspect-video"
+                             onerror="this.src='https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image'; this.onerror=null;">
+                    </div>
+                    <!-- Content -->
+                    <div class="md:col-span-3">
+                        <h3 class="font-sans font-semibold text-xl text-gray-900">3D Image Models & Building LLMs with Object Detection</h3>
+                        <p class="mt-2 text-base">Summary: NeRF experiments, object-aware retrieval, and integration notes for RAG pipelines.</p>
+                        <!-- Links -->
+                        <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- Abstract/Doc Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                Abstract
+                            </a>
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- PDF Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m9.75 9.75h1.5a2.25 2.25 0 0 1 2.25 2.25v2.25a2.25 2.25 0 0 1-2.25 2.25h-1.5a2.25 2.25 0 0 1-2.25-2.25V13.5a2.25 2.25 0 0 1 2.25-2.25Z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m-1.5 6H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H6.75m0-3.75V5.625c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125h-1.5m-7.5 9H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H6.75m0-3.75V13.5c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125h-1.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                PDF
+                            </a>
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- Code/Git Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                        <!-- Tags -->
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="font-sans text-xs font-medium bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">AI</span>
+                            <span class="font-sans text-xs font-medium bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                            <span class="font-sans text-xs font-medium bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-full">Computer Vision</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+                    <!-- Image -->
+                    <div class="md:col-span-1">
+                        <img src="https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image" 
+                             alt="Project placeholder image" 
+                             class="rounded-lg w-full h-auto object-cover aspect-video"
+                             onerror="this.src='https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image'; this.onerror=null;">
+                    </div>
+                    <!-- Content -->
+                    <div class="md:col-span-3">
+                        <h3 class="font-sans font-semibold text-xl text-gray-900">Neural Radiance Fields — PyTorch</h3>
+                        <p class="mt-2 text-base">Summary: Implementation details, tips for fast training, and Object detection models examples.</p>
+                        <!-- Links -->
+                        <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- PDF Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m9.75 9.75h1.5a2.25 2.25 0 0 1 2.25 2.25v2.25a2.25 2.25 0 0 1-2.25 2.25h-1.5a2.25 2.25 0 0 1-2.25-2.25V13.5a2.25 2.25 0 0 1 2.25-2.25Z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m-1.5 6H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H6.75m0-3.75V5.625c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125h-1.5m-7.5 9H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H6.75m0-3.75V13.5c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125h-1.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                PDF / Demo
+                            </a>
+                        </div>
+                        <!-- Tags -->
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="font-sans text-xs font-medium bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">AI</span>
+                            <span class="font-sans text-xs font-medium bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                            <span class="font-sans text-xs font-medium bg-orange-100 text-orange-700 px-2.5 py-0.5 rounded-full">Computer Vision</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+                    <!-- Image -->
+                    <div class="md:col-span-1">
+                        <img src="https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image" 
+                             alt="Project placeholder image" 
+                             class="rounded-lg w-full h-auto object-cover aspect-video"
+                             onerror="this.src='https://placehold.co/300x225/e2e8f0/94a3b8?text=Project+Image'; this.onerror=null;">
+                    </div>
+                    <!-- Content -->
+                    <div class="md:col-span-3">
+                        <h3 class="font-sans font-semibold text-xl text-gray-900">Building MCP Server in Data warehouse for Table Documentation Engine - Schema Intelligence</h3>
+                        <p class="mt-2 text-base">Summary: Creating a server for table documentation using schema intelligence to streamline data management and analysis.</p>
+                        <!-- Links -->
+                        <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- PDF Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m9.75 9.75h1.5a2.25 2.25 0 0 1 2.25 2.25v2.25a2.25 2.25 0 0 1-2.25 2.25h-1.5a2.25 2.25 0 0 1-2.25-2.25V13.5a2.25 2.25 0 0 1 2.25-2.25Z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m-1.5 6H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H6.75m0-3.75V5.625c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125h-1.5m-7.5 9H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H6.75m0-3.75V13.5c0-.621.504-1.125 1.125-1.125h1.5c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125h-1.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                                Pdf
+                            </a>
+                            <a href="#" class="font-sans text-sm font-medium text-blue-600 hover:underline inline-flex items-center">
+                                <!-- Code/Git Icon -->
+                                <svg class="w-4 h-4 mr-1.5 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.034c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                        <!-- Tags -->
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="font-sans text-xs font-medium bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded-full">Big Data Engineering</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
         
     </main>
+
+    <!-- ================================== 3. FOOTER ================================== -->
+    <footer class="mt-16 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 py-12 text-center">
+            <p class="text-base text-gray-700">
+                Please reach out to me for research collaborations or to discuss about the AI.
+            </p>
+            <p class="mt-2 text-base text-gray-700">
+                Email: <a href="mailto:david8deepu@gmail.com" class="text-blue-600 hover:underline">david8deepu[@]gmail[.]com</a>
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
