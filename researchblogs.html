@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Deepak Bolleddu - Research Blogs & Notes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (for headings) and PT Serif (for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        serif: ['PT Serif', 'ui-serif', 'Georgia'],
+                        lexend: ['Lexend', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        'blog-bg': '#F7F8FC', // Very light gray/blue background
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'PT Serif', serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            @apply font-sans font-bold text-xl md:text-2xl text-gray-900 border-b border-gray-300 pb-2 mb-6;
+        }
+        .blog-card {
+            @apply bg-white p-5 rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg border border-gray-100;
+        }
+    </style>
+</head>
+<body class="bg-blog-bg text-gray-800 leading-relaxed overflow-x-hidden">
+
+    <!-- Header / Navigation -->
+    <nav class="sticky top-0 bg-white z-10 max-w-4xl mx-auto flex justify-between items-center py-5 px-4 border-b border-gray-200">
+        <div>
+            <h1 class="font-sans font-bold text-xl text-gray-900">Research Blogs & Notes</h1>
+        </div>
+        <!-- Button to go back to the main site -->
+        <a href="index.html" class="font-sans text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">
+            &larr; Back to Portfolio
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto py-10 px-4 space-y-12">
+        
+        <h2 class="font-sans text-3xl font-extrabold text-gray-900 text-center">My Deep Dive into AI Research</h2>
+        
+        <!-- ================================== 1. Large Language Models (LLMs) ================================== -->
+        <section>
+            <h3 class="section-title">Large Language Models (LLMs) - Alignment, Pre-training, & AI Safety</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Blog 1: Alignment & Safety - DETAILED CONTENT -->
+                <div class="blog-card">
+                    <span class="font-sans text-xs font-semibold text-red-600 uppercase tracking-wider">AI Safety & DPO</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">Understanding DPO: Direct Preference Optimization</h4>
+                    <p class="text-sm mt-2 text-gray-700">DPO is an elegant and powerful technique that has revolutionized <b>LLM alignment</b>. It allows us to directly incorporate human preferences without the complexity and instability of training a separate reward model, a common source of trouble in traditional Reinforcement Learning from Human Feedback (RLHF).</p>
+                    <p class="text-sm mt-2 text-gray-700"><b>The core idea is astonishingly simple:</b> instead of learning a *reward* function, DPO uses a clever mathematical trick to directly compute the optimal policy (the LLM's behavior) from a dataset of human-chosen vs. rejected responses. This not only makes training faster and more stable, but it also minimizes the risk of "reward hacking," where the AI finds loopholes in the reward function. This method is crucial for building AIs that are not just smart, but truly helpful and safe.</p>
+                    <div class="mt-4 text-center">
+                        <span class="text-xs text-gray-500 block mb-2">Architecture Visual: Direct Preference Optimization</span>
+                        <img src="https://placehold.co/400x200/5057a6/ffffff?text=DPO+Architecture" alt="Placeholder diagram of the DPO training process." class="w-full rounded-lg shadow-inner mx-auto">
+                    </div>
+                </div>
+                
+                <!-- Blog 2: Pre-training - DETAILED CONTENT -->
+                <div class="blog-card">
+                    <span class="font-sans text-xs font-semibold text-indigo-600 uppercase tracking-wider">Pre-training & Tokenization</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">The Power of Tokenization in Transformer Models</h4>
+                    <p class="text-sm mt-2 text-gray-700">Tokenization breaks text into meaningful units (tokens). The quality of pre-training rests heavily on this crucial first step. Methods like <b>Byte-Pair Encoding (BPE)</b> and <b>SentencePiece</b> dynamically create a vocabulary that balances two opposing forces:</p>
+                    <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700 ml-4">
+                        <li><b>Efficiency:</b> Using fewer tokens to represent common words (e.g., 'tokenization' is one token).</li>
+                        <li><b>Expressiveness:</b> Breaking down rare or complex words accurately (e.g., 'hyperparameter' becomes 'hyper' + '##parameter').</li>
+                    </ul>
+                    <p class="text-sm mt-2 text-gray-700">Efficient tokenization is crucial for high-quality pre-training, reducing computational load, and ensuring faster inference speeds during deployment.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="border-gray-200">
+
+        <!-- ================================== 2. Reinforcement Learning (RL) & Agents ================================== -->
+        <section>
+            <h3 class="section-title">Reinforcement Learning & AI Agents - Multi-agent Systems & Agentic Solutions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Blog 3: Multi-Agent Systems - DETAILED CONTENT -->
+                <div class="blog-card">
+                    <span class="font-sans text-xs font-semibold text-green-600 uppercase tracking-wider">Multi-Agent Systems (MARL)</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">Building Collaborative AI Agents: A Look at MARL</h4>
+                    <p class="text-sm mt-2 text-gray-700"><b>Multi-Agent Reinforcement Learning (MARL)</b> focuses on training multiple independent or collaborative agents in a shared environment. This is essential for modeling real-world complex systems like traffic control or financial markets.</p>
+                    <p class="text-sm mt-2 text-gray-700">A key challenge is <b>non-stationarity</b>, meaning the environment is constantly changing because other agents are learning and adapting their behavior. Designing robust reward functions that encourage genuine cooperation rather than self-serving behavior is the defining architectural hurdle in MARL.</p>
+                    <div class="mt-4 text-center">
+                        <span class="text-xs text-gray-500 block mb-2">Architecture Visual: Decentralized MARL</span>
+                        <img src="https://placehold.co/400x200/10b981/ffffff?text=MARL+Decentralized+Agents" alt="Placeholder diagram of decentralized Multi-Agent Reinforcement Learning architecture." class="w-full rounded-lg shadow-inner mx-auto">
+                    </div>
+                </div>
+                
+                <!-- Blog 4: Agentic Solutions - DETAILED CONTENT -->
+                <div class="blog-card">
+                    <span class="font-sans text-xs font-semibold text-green-600 uppercase tracking-wider">AI Agentic Solutions</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">The Role of Planning and Memory in Agent Architectures</h4>
+                    <p class="text-sm mt-2 text-gray-700">The concept of an <b>AI Agent</b> transforms the LLM from a simple chatbot into an autonomous problem-solver. <b>Think of it as giving the LLM a body and a set of tools.</b> A complete agent architecture typically includes three pillars:</p>
+                    <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700 ml-4">
+                        <li><b>Planner:</b> Breaks down complex user goals into discrete, actionable steps (the mental flowchart).</li>
+                        <li><b>Memory:</b> Manages short-term context and long-term storage/retrieval via a vector database.</li>
+                        <li><b>Tool Use:</b> The ability to interface with external systems, such as code execution or searching.</li>
+                    </ul>
+                    <p class="text-sm mt-2 text-gray-700">This sophisticated loop of "Plan $\rightarrow$ Act $\rightarrow$ Reflect $\rightarrow$ Memorize" is the architectural key to tackling difficult, real-world tasks that require multiple steps and external data.</p>
+                    <div class="mt-4 text-center">
+                        <span class="text-xs text-gray-500 block mb-2">Architecture Visual: Agent Planning Loop</span>
+                        <img src="https://placehold.co/400x200/059669/ffffff?text=Agent+Planning+Loop" alt="Placeholder diagram of an AI Agent's iterative plan, act, and reflect loop." class="w-full rounded-lg shadow-inner mx-auto">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="border-gray-200">
+
+        <!-- ================================== 3. Computer Vision & Multimodal AI ================================== -->
+        <section>
+            <h3 class="section-title">Computer Vision & Multimodal AI - Multimedia Systems & Vision-Language Models</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Blog 5: Vision-Language Models - DETAILED CONTENT -->
+                <div class="blog-card">
+                    <span class="font-sans text-xs font-semibold text-orange-600 uppercase tracking-wider">Vision-Language Models (VLM)</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">The CLIP Model: Bridging Vision and Language</h4>
+                    <p class="text-sm mt-2 text-gray-700"><b>CLIP</b> is a revolutionary approach to understanding the world by linking two entirely different senses: <b>sight (Vision) and language (NLP).</b> It consists of two separate encoders (a Vision Transformer and a Text Transformer) trained together on 400 million pairs of images and their captions.</p>
+                    <p class="text-sm mt-2 text-gray-700">The magic lies in the <b>Contrastive Learning</b> objective: the model is trained to maximize the similarity between the correct image-text pair while minimizing similarity with all incorrect pairs in the batch. This creates a powerful, shared "concept space." Its <b>Zero-Shot capability</b> means it can classify images into categories it's *never* explicitly seen before, simply by describing those categories in text.</p>
+                    <div class="mt-4 text-center">
+                        <span class="text-xs text-gray-500 block mb-2">Architecture Visual: CLIP Contrastive Learning</span>
+                        <img src="https://placehold.co/400x200/f97316/ffffff?text=CLIP+Contrastive+Architecture" alt="Placeholder diagram of the CLIP model's dual-encoder and contrastive learning process." class="w-full rounded-lg shadow-inner mx-auto">
+                    </div>
+                </div>
+                
+                <!-- Blog 6: Multimedia Systems - DETAILED CONTENT -->
+                <div class="blog-card">
+                    <span class="font-sans text-xs font-semibold text-orange-600 uppercase tracking-wider">Multimedia Retrieval Systems</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">Designing Efficient Multimedia Retrieval Systems</h4>
+                    <p class="text-sm mt-2 text-gray-700">When dealing with massive datasets containing text, images, and video, <b>efficient indexing</b> is paramount. Building efficient multimedia systems involves two key architectural components:</p>
+                    <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700 ml-4">
+                        <li><b>Embedding Generation:</b> Using VLM models (like CLIP) to convert all content (images, video frames, text descriptions) into a unified vector space.</li>
+                        <li><b>Vector Search Database:</b> Employing specialized databases (e.g., FAISS, Pinecone) that can perform "nearest neighbor" searches on these high-dimensional vectors for near-instantaneous search and retrieval across all media types.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
+        <hr class="border-gray-200">
+
+        <!-- ================================== 4. Knowledge Areas (HCI, NLP, etc.) - Notes Section ================================== -->
+        <section>
+            <h3 class="section-title">Fundamental Knowledge Areas (Quick Notes)</h3>
+            <div class="space-y-4">
+                
+                <!-- Note 1: HCI -->
+                <div class="blog-card bg-gray-50">
+                    <span class="font-sans text-xs font-semibold text-teal-600 uppercase tracking-wider">HCI & Interaction</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">Key Principles of Human-AI Interaction</h4>
+                    <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700 ml-4">
+                        <li><b>Explainability (XAI):</b> Why the model made a decision—moving beyond "black box" outcomes.</li>
+                        <li><b>Controllability:</b> Giving the user power to modify, guide, and constrain the AI's behavior.</li>
+                        <li><b>Trust & Reliability:</b> Ensuring consistent, safe, and predictable outputs, especially under stress.</li>
+                    </ul>
+                </div>
+                
+                <!-- Note 2: Open-Source / Safety -->
+                <div class="blog-card bg-gray-50">
+                    <span class="font-sans text-xs font-semibold text-purple-600 uppercase tracking-wider">Safety & Open Source</span>
+                    <h4 class="font-sans font-bold text-lg mt-1 text-gray-900">Notes on Interdisciplinary Research and Alignment</h4>
+                    <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700 ml-4">
+                        <li><b>Open-Source Benefits:</b> Accelerating innovation, enabling community auditing, and improving model accountability through diverse contributions.</li>
+                        <li><b>AI Safety:</b> Methods for minimizing unintended or harmful outcomes, a field requiring collaboration between technical researchers and ethicists.</li>
+                        <li><b>NLP Foundations:</b> Understanding the mathematics of the transformer architecture, including the sequence modeling, self-attention mechanisms, and positional encoding.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="max-w-4xl mx-auto border-t border-gray-200 py-6 mt-12 text-center text-sm text-gray-500">
+        <p class="font-sans">&copy; 2025 Deepak Bolleddu. All rights reserved. | <a href="index.html" class="hover:underline">Back to Main</a></p>
+    </footer>
+
+</body>
+</html>
